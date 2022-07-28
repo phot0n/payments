@@ -164,6 +164,6 @@ def delete_custom_fields():
 
 
 def before_install():
-	# only install for v14
-	if cint(frappe.get_module("frappe").__version__[:2]) < 14 or not frappe.get_meta("Module Def").has_field("custom"):
+	# for erpnext ci patch test
+	if not frappe.get_meta("Module Def").has_field("custom"):
 		return False
